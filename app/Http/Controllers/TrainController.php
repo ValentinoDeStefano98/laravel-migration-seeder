@@ -11,7 +11,7 @@ class TrainController extends Controller
     //Rotta localhost/trains
     public function index(){
 
-        $trains = Train::all();
+        $trains = Train::where('departure_time(Y-m-d)', '==', 'NOW()');
 
         return view('pages.trains.index', compact('trains'));
     }
