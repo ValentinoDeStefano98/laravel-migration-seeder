@@ -12,5 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ //Rotte statiche
+Route::get('/', 'PageController@home' )->name('home');
+Route::get('/about-us', 'PageController@aboutUs' )->name('aboutUs');
+Route::get('/contacts', 'PageController@contacts' )->name('contacts');
 
-Route::get('/', 'PageController@index' );
+
+//Rotte dinamiche
+Route::get('/trains', 'TrainController@index' )->name('trains');
